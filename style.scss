@@ -2,7 +2,285 @@
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     font-family: $main-font;
     font-size: $font-size;
+    background-color: $landing-bg;
+    color: $content-color;
+    font-size: 1.2em;
+    height: 100vh;
+    width: 100hv;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 1400px;
+}
+
+h1 {
+    // color: #317ac1;
+    color: #e1a624;
+}
+
+h2,
+h3 {
+    color: $content-color;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+
+    display: flex;
+    height: 100vh;
+
+
+    #prez-menu {
+        margin: 96px 0 96px 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-width: 35%;
+        min-height: 65vh;
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            #name {
+                font-size: 3.2em;
+                color: $title-color;
+                margin: 0;
+            }
+
+            p {
+                margin: 6px;
+                font-family: $second-font;
+            }
+        }
+
+
+
+        #global-menu {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8em;
+            margin: 16px;
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+
+
+                li {
+                    margin: 12px 0;
+
+                    a {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 16px;
+
+                        .nav-indicator {
+                            display: block;
+                            height: 1px;
+                            width: 56px;
+                            background-color: $content-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        #contact {
+            font-size: 1.4em;
+            margin-top: 35px;
+            
+            i {
+                padding: 0 6px;
+            }
+        }
+    }
+
+    #main-content {
+        margin: 96px;
+        display: flex;
+        flex-direction: column;
+        font-size: 1em;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        #landing-techs{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            
+
+            h2 {
+                margin-top: 0;
+                align-self: center;
+            }
+
+            .landing-techs__row-wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 100%;
+                margin-bottom: 32px;
+
+                .tech-row-title {
+                    min-width: 65px;
+                    padding: 0;
+                    margin: 0;
+                    margin-bottom: 24px;
+                    font-size: 1em;
+                }
+
+                .landing-techs__row-wrapper__techs-wrapper{
+                    display: flex;
+                    flex-direction: row;
+                    padding: 0;
+                    margin: 0;
+                    font-size: 2.8em;
+
+                    .tech-icon i {
+                        transition: color 1.5s ease-in-out;
+                    }
+                    
+                        .landing-techs__row-wrapper__techs-wrapper__tech-wrapper {
+                            padding: 0;
+                            margin: 12px;
+                        }
+                }
+
+                .tech-icon {    
+                    position: relative;
+                    padding: 0;  
+
+                        .tooltip {                            
+                            display: block;
+                            position: absolute;
+                            margin: 0;
+                            padding: 0;
+                            opacity: 0;
+                            background-color: $landing-bg;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            
+                            transition: opacity 1.5s ease-out;
+
+
+                            .tooltip-message {
+                                font-size: 0.2em;
+                                margin: 0;
+                                padding: 4px 8px;
+                                height: 100%;
+                                width: 100%;
+                                color: $landing-bg;
+                                text-align: center;
+                                border-radius: 19px;
+                                box-shadow:  14px 14px 28px #040608,
+                                            -14px -14px 28px #0e181e;
+                            }
+                            
+                            .javaScript{
+                                background-color: #f0db4f;
+                            }
+
+                            .react{
+                                background-color: #61dafb;
+                            }
+
+                            .nodejs{
+                                background-color: #83cd29;
+                            }
+
+                            .sass{
+                                background-color: #cc6699;
+                            }
+
+                            .python{
+                                background-color: #ffd845;
+                            }
+
+                            .mongodb{
+                                background-color: #4faa41;
+                            }
+
+                            .mysql{
+                                background-color: #00618a;
+                            }
+
+                            .git{
+                                background-color: #f34f29;
+                            }
+
+                            .trello{
+                                background-color: #23719f;
+                            }
+
+                            .figma{
+                                background-color: #f24e1e;
+                            }
+                        }
+                }
+
+                .tech-icon:hover .tooltip, .tech-icon.hover .tooltip {
+                    opacity: 1;
+                    transition: opacity 0.4s ease-in;                 
+                }
+
+                // .tech-icon.hover .tooltip {
+                //     display: block;
+                //     background-color: $landing-bg;
+                //     width: 100%;
+                //     display: flex;
+                //     justify-content: center;
+                //     opacity: 1;
+                //     transition: opacity 0.9s ease-in-out;
+                // }
+
+                .soft-skills {
+
+                    margin: 0;
+                    padding: 0;
+                    font-size: 0.9em;
+                    font-family: $second-font;
+
+                    .soft-skills-imgs {
+                        padding: 0 16px 8px 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        img {
+                            width: 140px;
+                            border-radius: 12px;
+                            margin-bottom: 8px;
+                        }
+
+                        span {
+                            color: $content-color;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
 }
