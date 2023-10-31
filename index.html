@@ -17,156 +17,215 @@
 </head>
 
 <body>
+    <header>
+        <div id="language-selector">
+            <div id="fr" class="possible-language">Fr</div>
+            <input class="togglesw" type="checkbox" id="language-toggle">
+            <div id="en" class="possible-language">En</div>
+        </div>
+    </header>
     <main>
-        <section id="prez-menu">
-            <div class='description'>
-                <p id="name" class="animate-text">Dimitri Perreaux</p>
-                <h1 id="job" class="animate-text">Web developer</h1>
-                <p id="school" class="animate-text">Studying <strong>Bachelor IT</strong> at <strong>EPSI
-                        Lille,</strong></p>
-                <p id="school" class="animate-text">Looking for a <strong>Cooperative training course</strong>.</p>
-            </div>
-            <nav id="global-menu">
-                <ul>
-                    <li>
-                        <a href="#landing-techs">
-                            <span class="nav-indicator"></span>
-                            <span class="menu-filter">SKILLS</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#landing-techs">
-                            <span class="nav-indicator"></span>
-                            <span class="menu-filter">PROJECTS</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#landing-techs">
-                            <span class="nav-indicator"></span>
-                            <span class="menu-filter">ABOUT</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#landing-techs">
-                            <span class="nav-indicator"></span>
-                            <span class="menu-filter">CONTACT</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div id="contact">
-                <i class="devicon-github-original"></i>
-                <i class="devicon-linkedin-plain"></i>
-            </div>
-        </section>
-        <section id="main-content">
-            <div id='landing-techs'>
-                <div class="landing-techs__row-wrapper">
-                    <ul class="landing-techs__row-wrapper__techs-wrapper soft-skills">
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
-                            <img src="./assets/team_work_04.png">
-                            <span>Teamplayer</span>
+        <div class="page-container">
+            <aside id="prez-menu">
+                <div class='description'>
+                    <p id="name" class="animate-text"></p>
+                    <h1 id="job" class="animate-text"></h1>
+                    <p id="school" class="animate-text">></p>
+                    <p id="availability" class="animate-text"></p>
+                </div>
+                <nav id="global-menu">
+                    <ul>
+                        <li>
+                            <a href="#skills" class="menu-selector">
+                                <span class="nav-indicator"></span>
+                                <span class="menu-filter" id="menu-skills"></span>
+                            </a>
                         </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
-                            <img src="./assets/client_oriented_06.png">
-                            <span>Client oriented</span>
+                        <li>
+                            <a href="#projects" class="menu-selector">
+                                <span class="nav-indicator"></span>
+                                <span class="menu-filter" id="menu-projects"></span>
+                            </a>
                         </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
-                            <img src="./assets/analytic_02.png">
-                            <span>Analytic</span>
+                        <li>
+                            <a href="#about" class="menu-selector">
+                                <span class="nav-indicator"></span>
+                                <span class="menu-filter" id="menu-about"></span>
+                            </a>
                         </li>
                     </ul>
+                </nav>
+                <div class="cta-cv">
+                    <div class="button-cv">
+                        <a href="./assets/dimitri_perreaux_cv_alternance_dev.pdf"
+                            download="./assets/dimitri_perreaux_cv_alternance_dev.pdf">Get my CV</a>
+                    </div>
                 </div>
-                <div class="landing-techs__row-wrapper">
-                    <!-- <h3 class="tech-row-title">Skills</h3> -->
-                    <ul class="landing-techs__row-wrapper__techs-wrapper">
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-javascript-plain" data-tooltip="JavaScript"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message javaScript">JavaScript</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-react-original-wordmark" data-tooltip="React"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message react">React</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-nodejs-plain" data-tooltip="Node.js"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message nodejs">Node.js</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-sass-original" data-tooltip="Sass"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message sass">Sass</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-python-plain-wordmark" data-tooltip="Python"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message python">Python</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-mongodb-plain-wordmark" data-tooltip="MongoDB"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message mongodb">MongoDB</p>
-                            </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
-                            <i class="devicon-mysql-plain" data-tooltip="MySQL"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message mysql">MySQL</p>
-                            </div>
-                        </li>
-                    </ul>
+                <div id="contact">
+                    <i class="devicon-github-original"></i>
+                    <i class="devicon-linkedin-plain"></i>
                 </div>
-                
-                <div class="landing-techs__row-wrapper">
-                    <!-- <h3 class="tech-row-title">Tools</h3> -->
-                    <ul class="landing-techs__row-wrapper__techs-wrapper">
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
-                            <i class="devicon-git-plain" data-tooltip="Git"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message git">Git</p>
+            </aside>
+            <div id="scrollable-content">
+                <section id='skills'>
+                    <div class="landing-techs__row-wrapper">
+                        <ul class="landing-techs__row-wrapper__techs-wrapper soft-skills">
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
+                                <img src="./assets/team_work_04.png">
+                                <span class="soft-skill">Teamplayer</span>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
+                                <img src="./assets/client_oriented_06.png">
+                                <span class="soft-skill">Client oriented</span>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper soft-skills-imgs">
+                                <img src="./assets/analytic_02.png">
+                                <span class="soft-skill">Analytic</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="landing-techs__row-wrapper">
+                        <!-- <h3 class="tech-row-title">Skills</h3> -->
+                        <ul class="landing-techs__row-wrapper__techs-wrapper">
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-javascript-plain" data-tooltip="JavaScript"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message javaScript">JavaScript</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-react-original-wordmark" data-tooltip="React"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message react">React</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-nodejs-plain" data-tooltip="Node.js"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message nodejs">Node.js</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-sass-original" data-tooltip="Sass"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message sass">Sass</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-python-plain-wordmark" data-tooltip="Python"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message python">Python</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-mongodb-plain-wordmark" data-tooltip="MongoDB"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message mongodb">MongoDB</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
+                                <i class="devicon-mysql-plain" data-tooltip="MySQL"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message mysql">MySQL</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="landing-techs__row-wrapper">
+                        <!-- <h3 class="tech-row-title">Tools</h3> -->
+                        <ul class="landing-techs__row-wrapper__techs-wrapper">
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
+                                <i class="devicon-git-plain" data-tooltip="Git"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message git">Git</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
+                                <i class="devicon-trello-plain" data-tooltip="Trello"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message trello">Trello</p>
+                                </div>
+                            </li>
+                            <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
+                                <i class="devicon-figma-plain" data-tooltip="Figma"></i>
+                                <div class="tooltip">
+                                    <p class="tooltip-message figma">Figma</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section id="projects">
+                    <h2>Projets</h2>
+                    <div class="project-card">
+                        <div class="project-card-description">
+                            <div class="project-card-description-title">
                             </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
-                            <i class="devicon-trello-plain" data-tooltip="Trello"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message trello">Trello</p>
+                            <div class="project-card-description-summary">
                             </div>
-                        </li>
-                        <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
-                            <i class="devicon-figma-plain" data-tooltip="Figma"></i>
-                            <div class="tooltip">
-                                <p class="tooltip-message figma">Figma</p>
+                            <div class="project-card-description-techs-wrapper">
+                                <span class="tech-project">React</span>
+                                <span class="tech-project">Sass</span>
                             </div>
-                        </li>
+                        </div>
+                        <div class="project-card-img-wrapper">
+                            <img src="./assets/kasa_home-1.webp">
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-description">
+                            <div class="project-card-description-title">
+                            </div>
+                            <div class="project-card-description-summary">
 
-                    </ul>
-                </div>
+                            </div>
+                            <div class="project-card-description-techs-wrapper">
+                                <span class="tech-project">Node.js</span>
+                                <span class="tech-project">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-card-img-wrapper">
+                            <img src="./assets/grimoire_home.png">
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-description">
+                            <div class="project-card-description-title">
+                            </div>
+                            <div class="project-card-description-summary">
+                            </div>
+                            <div class="project-card-description-techs-wrapper">
+                                <span class="tech-project">JavaScript</span>
+                                <span class="tech-project">SEO</span>
+                            </div>
+                        </div>
+                        <div class="project-card-img-wrapper">
+                            <img src="./assets/nina carducci.png">
+                        </div>
+                    </div>
+                </section>
+                <section id="about">
+                    <h2>A propos</h2>
+                    <div class="wrapper-about">
+                        <div class="wraper-about-photo">
+                            <img src="./assets/dimitri.png">
+                        </div>
+                        <div id="about-text">
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <p>
+                    </p>
+                    <p>
+                    </p>
+                    <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank">Stable Diffusion
+                        WebUI.</a>
+                </footer>
             </div>
-            <div id="projects">
-                <p>
-                    Voici mes projets
-                </p>
-                <p>
-                    Voici mes projets
-                </p>
-                <p>
-                    Voici mes projets
-                </p>
-                <p>
-                    Voici mes projets
-                </p>
-            </div>
-        </section>
-
+        </div>
     </main>
+
 </body>
 
 </html>

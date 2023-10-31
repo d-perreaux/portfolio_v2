@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0 auto;
@@ -8,7 +12,6 @@ body {
   font-size: 1.2em;
   height: 100vh;
   width: 100hv;
-  overflow: hidden;
   box-sizing: border-box;
   max-width: 1400px;
 }
@@ -31,27 +34,95 @@ ul {
   list-style: none;
 }
 
-main {
-  display: flex;
-  height: 100vh;
+header {
+  position: fixed;
+  right: 0;
+  width: 100%;
+  opacity: 0.4;
+  z-index: 99;
 }
+header #language-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 16px;
+  align-items: center;
+}
+header #language-selector .possible-language {
+  font-size: 0.7em;
+}
+header #language-selector .togglesw {
+  --s: 13px;
+  /* adjust this to control the size*/
+  height: calc(var(--s) + var(--s) / 5);
+  width: auto;
+  /* some browsers need this */
+  aspect-ratio: 2.25;
+  border-radius: var(--s);
+  margin: calc(var(--s) / 2);
+  display: grid;
+  cursor: pointer;
+  background: linear-gradient(to right, #0055a4 33.33%, #0055a4 33.33%, #ffffff 33.33%, #ffffff 66.66%, #ef4135 66.66%, #ef4135);
+  box-sizing: content-box;
+  overflow: hidden;
+  transition: 0.3s 0.1s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-image 1s ease-in-out;
+}
+header #language-selector .togglesw:before {
+  content: "";
+  padding: calc(var(--s) / 10);
+  --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%, #000 96%, #0000);
+  background: var(--_g) 0/var(--_p, var(--s)) 100% no-repeat content-box, var(--_g) var(--_p, 0)/var(--s) 100% no-repeat content-box, #fff;
+  mix-blend-mode: darken;
+  filter: blur(calc(var(--s) / 12)) contrast(11);
+  transition: 0.4s, background-position 0.4s 0.1s, padding cubic-bezier(0, calc(var(--_i, -1) * 200), 1, calc(var(--_i, -1) * 200)) 0.25s 0.1s;
+}
+header #language-selector .togglesw:checked {
+  background-image: url("./assets/union_jack.webp");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+header #language-selector .togglesw:checked:before {
+  padding: calc(var(--s) / 10 + 0.05px) calc(var(--s) / 10);
+  --_p: 100%;
+  --_i: 1;
+}
+
+header:hover {
+  opacity: 1;
+}
+
+.page-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-around;
+  margin: 0 96px;
+}
+
 main #prez-menu {
-  margin: 96px 0 96px 96px;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   min-width: 35%;
-  min-height: 65vh;
+  position: sticky;
+  top: 0;
+  width: 40%;
+  height: 100vh;
+  background-color: #090f13;
 }
 main #prez-menu .description {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 main #prez-menu .description #name {
   font-size: 3.2em;
   color: #e2e8f0;
-  margin: 0;
+  margin: 40px 0 0 0;
 }
 main #prez-menu .description p {
   margin: 6px;
@@ -67,6 +138,7 @@ main #prez-menu #global-menu ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  width: max-content;
 }
 main #prez-menu #global-menu ul li {
   margin: 12px 0;
@@ -83,6 +155,36 @@ main #prez-menu #global-menu ul li a .nav-indicator {
   height: 1px;
   width: 56px;
   background-color: #d1d1d1;
+  transition: 0.2s ease-in-out;
+}
+main #prez-menu #global-menu ul li a.menu-selected,
+main #prez-menu #global-menu ul li a:hover {
+  font-weight: 700;
+  color: white;
+}
+main #prez-menu #global-menu ul li a.menu-selected .nav-indicator,
+main #prez-menu #global-menu ul li a:hover .nav-indicator {
+  width: 80px;
+  background-color: white;
+  height: 2px;
+}
+main #prez-menu .cta-cv {
+  display: flex;
+  margin-left: 16px;
+  padding-left: 40px;
+}
+main #prez-menu .cta-cv .button-cv {
+  background: linear-gradient(to right, #aa7c1f, #e1a624);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+main #prez-menu .cta-cv .button-cv:hover {
+  background: linear-gradient(90deg, #e1a624, #aa7c1f);
+  transform: scale(1.05);
 }
 main #prez-menu #contact {
   font-size: 1.4em;
@@ -91,60 +193,62 @@ main #prez-menu #contact {
 main #prez-menu #contact i {
   padding: 0 6px;
 }
-main #main-content {
-  margin: 96px;
+main #scrollable-content {
+  margin: 0;
   display: flex;
   flex-direction: column;
   font-size: 1em;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-main #main-content #landing-techs {
+main #scrollable-content #skills {
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-around;
+  height: 83vh;
+  padding-top: 10px;
 }
-main #main-content #landing-techs h2 {
-  margin-top: 0;
-  align-self: center;
-}
-main #main-content #landing-techs .landing-techs__row-wrapper {
+main #scrollable-content #skills .landing-techs__row-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  margin-bottom: 32px;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-row-title {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-row-title {
   min-width: 65px;
   padding: 0;
   margin: 0;
   margin-bottom: 24px;
   font-size: 1em;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
   display: flex;
   flex-direction: row;
   padding: 0;
   margin: 0;
-  font-size: 2.8em;
+  font-size: 3.1em;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon i {
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon i {
   transition: color 1.5s ease-in-out;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .landing-techs__row-wrapper__techs-wrapper__tech-wrapper {
-  padding: 0;
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .landing-techs__row-wrapper__techs-wrapper__tech-wrapper {
+  padding: 0px;
   margin: 12px;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon {
   position: relative;
   padding: 0;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip {
   display: block;
   position: absolute;
   margin: 0;
@@ -154,9 +258,10 @@ main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .toolti
   width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 0.75em;
   transition: opacity 1.5s ease-out;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
   font-size: 0.2em;
   margin: 0;
   padding: 4px 8px;
@@ -167,59 +272,236 @@ main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .toolti
   border-radius: 19px;
   box-shadow: 14px 14px 28px #040608, -14px -14px 28px #0e181e;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .javaScript {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .javaScript {
   background-color: #f0db4f;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .react {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .react {
   background-color: #61dafb;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .nodejs {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .nodejs {
   background-color: #83cd29;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .sass {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .sass {
   background-color: #cc6699;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .python {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .python {
   background-color: #ffd845;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .mongodb {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .mongodb {
   background-color: #4faa41;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .mysql {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .mysql {
   background-color: #00618a;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .git {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .git {
   background-color: #f34f29;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .trello {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .trello {
   background-color: #23719f;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon .tooltip .figma {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .figma {
   background-color: #f24e1e;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon:hover .tooltip, main #main-content #landing-techs .landing-techs__row-wrapper .tech-icon.hover .tooltip {
+main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon.hover .tooltip {
   opacity: 1;
-  transition: opacity 0.4s ease-in;
+  transition: opacity 1.5s ease-in;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .soft-skills {
-  margin: 0;
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper:hover .tooltip {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills {
+  margin: 0 0 45px 0;
   padding: 0;
   font-size: 0.9em;
   font-family: "Roboto";
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .soft-skills .soft-skills-imgs {
-  padding: 0 16px 8px 0;
+main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs {
+  padding: 40px 16px 8px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
+main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
   width: 140px;
   border-radius: 12px;
   margin-bottom: 8px;
 }
-main #main-content #landing-techs .landing-techs__row-wrapper .soft-skills .soft-skills-imgs span {
+main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs span {
   color: #d1d1d1;
+  font-size: 1.1em;
+  margin-top: 4px;
+}
+main #scrollable-content #projects {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+}
+main #scrollable-content #projects h2 {
+  margin: 0;
+  align-self: flex-start;
+}
+main #scrollable-content #projects h2:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+}
+main #scrollable-content #projects .project-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 175px;
+  cursor: pointer;
+  border-radius: 28px;
+  margin-bottom: 22px;
+  opacity: 0.3;
+  transition: opacity 0.7s ease-in-out;
+}
+main #scrollable-content #projects .project-card .project-card-description {
+  max-width: 28%;
+  height: 100%;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+main #scrollable-content #projects .project-card .project-card-description .project-card-description-title {
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: 1em;
+  width: auto;
+  text-align: center;
+}
+main #scrollable-content #projects .project-card .project-card-description .project-card-description-summary {
+  font-family: "Roboto";
+  font-size: 0.7em;
+  text-align: center;
+}
+main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+}
+main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper .tech-project {
+  color: #090f13;
+  background-color: white;
+  border-radius: 25px;
+  margin: 0 6px;
+  padding: 3px 12px;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+main #scrollable-content #projects .project-card .project-card-img-wrapper {
+  transition: all 0.4s cubic-bezier(0.24, 0.25, 0.42, 1.01);
+  height: 175px;
+  overflow: hidden;
+  width: 100%;
+}
+main #scrollable-content #projects .project-card .project-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  transition: transform 0.4s cubic-bezier(0.24, 0.25, 0.42, 1.01);
+}
+main #scrollable-content #projects .project-card:hover .project-card-img-wrapper {
+  transform: scale(0.9);
+}
+main #scrollable-content #projects .project-card:hover .project-card-img-wrapper img {
+  transform: scale(1.3);
+}
+main #scrollable-content #projects .project-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+main #scrollable-content #projects .project-card:nth-child(even) img {
+  object-position: -100% 0;
+}
+main #scrollable-content #projects .project-card-visible {
+  opacity: 1;
+}
+main #about {
+  padding-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 85vh;
+  position: relative;
+}
+main #about h2 {
+  margin: 0;
+  align-self: flex-start;
+}
+main #about h2:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+}
+main #about .wrapper-about {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  transition: opacity 0.7s ease-in-out;
+}
+main #about .wrapper-about .wraper-about-photo {
+  margin-right: 16px;
+  background-color: #090f13;
+  z-index: 10;
+}
+main #about .wrapper-about .wraper-about-photo img {
+  width: 100%;
+  border-radius: 50%;
+  border-radius: 100%;
+  outline: 4px solid #090f13;
+  outline-offset: -2px;
+  width: 15vw;
+}
+main #about .about-visible {
+  opacity: 1;
+}
+main #about #about-text {
+  display: flex;
+  flex-direction: column;
+}
+main #about #about-text p {
+  font-family: "Roboto";
+  font-size: 0.8em;
+  line-height: 1.4;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+main #about #about-text p:first-child {
+  text-indent: 20px;
+}
+main footer {
+  font-size: 0.7em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+}
+main footer p {
+  margin: 4px;
+  padding: 0;
+}
+main footer a {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

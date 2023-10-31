@@ -1,0 +1,58 @@
+{
+    "description": {
+        "name": "Dimitri Perreaux",
+        "job": "Web Developer",
+        "school": "Studying <strong>Bachelor IT</strong> at <strong>EPSI Lille,</strong>",
+        "availability": "Looking for a <strong>Cooperative training course</strong>."
+    },
+    "globalMenu": [
+        "SKILLS",
+        "PROJECTS",
+        "ABOUT",
+        "CONTACT"
+    ],
+    "titleSections": [
+        "Projects",
+        "About"
+    ],
+    "softSkills": [
+        "Teamplayer",
+        "Client oriented",
+        "Analytic"
+    ],
+    "projects": [
+        {
+            "title": "Kasa",
+            "description": "Peer-to-peer apartment rental web application",
+            "techUsed": [
+                "React",
+                "Sass"
+            ]
+        },
+        {
+            "title": "Mon Vieux Grimoire",
+            "description": "Library website for book referencing and rating",
+            "techUsed": [
+                "Node.js",
+                "MongoDB"
+            ]
+        },
+        {
+            "title": "Nina Carducci Portfolio",
+            "description": "Photographer portfolio",
+            "techUsed": [
+                "JavaScript",
+                "SEO"
+            ]
+        }
+    ],
+    "about": [
+        "I am passionate about the world of development, drawn to a dynamic and forward-looking environment.",
+        "Formerly a pharmacist, I embarked on this transition to better align my career with my aspirations.",
+        "Outside of work, I enjoy immersing myself in reading and taking walks to rejuvenate."
+    ], 
+    "footer":[
+        "Designed and created by Dimitri Perreaux. 2022.", 
+        "Images generated using"
+    ]
+}

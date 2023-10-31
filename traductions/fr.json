@@ -1,0 +1,57 @@
+{
+    "description": {
+        "name": "Dimitri Perreaux",
+        "job": "Développeur Web",
+        "school": "Etudiant <strong>Bachelor IT</strong> à <strong>EPSI Lille,</strong>",
+        "availability": "Recherche <strong>alternance</strong>."
+    },
+    "globalMenu": [
+        "COMPETENCES",
+        "PROJETS",
+        "A PROPOS"
+    ],
+    "titleSections": [
+        "Projets",
+        "A propos"
+    ],
+    "softSkills": [
+        "Esprit d'équipe",
+        "Orientation client",
+        "Analytique"
+    ],
+    "projects": [
+        {
+            "title": "Kasa",
+            "description": "Application web de location d'appartement, de particulier à particulier",
+            "techUsed": [
+                "React",
+                "Sass"
+            ]
+        },
+        {
+            "title": "Mon Vieux Grimoire",
+            "description": "Site d'une librairie, de référencement et notation de livres",
+            "techUsed": [
+                "Node.js",
+                "MongoDB"
+            ]
+        },
+        {
+            "title": "Nina Carducci Portfolio",
+            "description": "Portfolio d'une photographe, Nina",
+            "techUsed": [
+                "JavaScript",
+                "SEO"
+            ]
+        }
+    ],
+    "about":[
+        "Je suis un passionné du monde du développement, attiré par un environnement dynamique et tourné vers l'avenir.",
+        "Précédemment pharmacien d'officine, j'ai entrepris cette transition pour mieux aligner ma carrière sur mes aspirations.",
+        "En dehors du travail, j'aime me plonger dans la lecture et profiter de promenades pour me ressourcer." 
+    ], 
+    "footer":[
+        "Concu et créé par Dimitri Perreaux. 2022.", 
+        "Images générées via"
+    ]
+}
