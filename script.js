@@ -110,9 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const footerParagraphesList = data.footer;
                 const footerParagraphesElements = document.querySelectorAll("footer p");
                 for (let i = 0; i < footerParagraphesList.length; i++) {
-                    console.log(footerParagraphesElements[i]);
-                    console.log(data.footer[i]);
-
                     footerParagraphesElements[i].textContent = data.footer[i];
                 }
 
@@ -223,7 +220,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // appeler handleScroll au chargement de la page pour vérifier si les éléments initialement visibles doivent également être animés
     handleProjectScroll();
-    handleMenuScroll();    
+    handleMenuScroll();
+
+    let modal = null;
+
+    const openModal = function (e) {
+        e.preventDefault();
+        let target = e.target;
+
+        while (target && target.tagName !== 'A') {
+            target = target.parentElement;
+        }
+
+        const modalFocus = document.querySelector(`${target.getAttribute('href')}`);      
+        modalFocus.style.display = null
+
+        modal = modalFocus;
+
+        // modal.addEventListener("click", closeModal);
+        modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
+    }
+
+    const closeModal = function (e) {
+        if (modal === null) return
+        e.preventDefault;
+        modal.style.display = "none";
+        // modal.removeEventListener("click", closeModal);
+        modal.querySelector('.js-modal-close').removeListener('click', closeModal);
+        modal = null
+    }
+
+    
+    document.querySelectorAll(".js-modal").forEach(a => {
+        
+        a.addEventListener("click", openModal);
+        
+    })
+    
 
 })
 
