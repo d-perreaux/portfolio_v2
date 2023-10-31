@@ -292,13 +292,23 @@ main {
                 .landing-techs__row-wrapper__techs-wrapper {
                     display: flex;
                     flex-direction: row;
-
+                    justify-content: center;
+                    align-items: center;
                     padding: 0;
                     margin: 0;
-                    font-size: 3.1em;
+                    font-size: 2.9em;
 
                     .tech-icon i {
-                        transition: color 1.5s ease-in-out;
+                        transition: color 1.5s ease-in-out, font-size 0.2s ease-out;
+                    }
+
+                    .tech-icon:hover i {
+                        font-size: 1.2em;
+                        
+                    }
+
+                    .tech-icon:hover .tooltip-message {
+                        font-weight: 700;
                     }
 
                     .landing-techs__row-wrapper__techs-wrapper__tech-wrapper {
@@ -310,6 +320,8 @@ main {
                 .tech-icon {
                     position: relative;
                     padding: 0;
+                    // width: 60px;
+                    height: 60px;
 
                     .tooltip {
                         display: block;
@@ -389,16 +401,6 @@ main {
                     opacity: 1;
                     transition: opacity .5s ease-in;
                 }
-
-                // .tech-icon.hover .tooltip {
-                //     display: block;
-                //     background-color: $landing-bg;
-                //     width: 100%;
-                //     display: flex;
-                //     justify-content: center;
-                //     opacity: 1;
-                //     transition: opacity 0.9s ease-in-out;
-                // }
 
                 .soft-skills {
                     margin: 0 0 45px 0;
@@ -668,3 +670,5 @@ main {
     padding: 20px;
     background-color: green;
 }
+
+

@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ;
 
     function loadTranslation(language) {
-        console.log(window.location);
         fetch(`./traductions/${language}.json`)
             .then(response => response.json()
             .then(data => {
@@ -128,12 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
-    
-
     menuFilters = document.getElementsByClassName('menu-selector');
     
-
     function removeMenuSelected(){
         for (const menuFilter of menuFilters) {
             if (menuFilter.classList.contains('menu-selected')) {
@@ -151,11 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    
-
     function handleProjectScroll() {
         const projectCards = document.querySelectorAll(".project-card");
-        
         
         projectCards.forEach(card => {
             const rect = card.getBoundingClientRect();
@@ -185,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-
     }
 
     function handleMenuScroll() {
@@ -209,13 +200,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-    
 
     // gestionnaire d'événement de défilement
     window.addEventListener("scroll", handleProjectScroll);
     window.addEventListener("scroll", handleMenuScroll);
     
-
     // appeler handleScroll au chargement de la page pour vérifier si les éléments initialement visibles doivent également être animés
     handleProjectScroll();
     handleMenuScroll();
@@ -248,14 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
         modal = null
     }
 
-    
     document.querySelectorAll(".js-modal").forEach(a => {
-        
         a.addEventListener("click", openModal);
-        
     })
-    
-
 })
 
 

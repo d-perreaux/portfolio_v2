@@ -240,12 +240,20 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-row-title {
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
-  font-size: 3.1em;
+  font-size: 2.9em;
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon i {
-  transition: color 1.5s ease-in-out;
+  transition: color 1.5s ease-in-out, font-size 0.2s ease-out;
+}
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon:hover i {
+  font-size: 1.2em;
+}
+main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon:hover .tooltip-message {
+  font-weight: 700;
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .landing-techs__row-wrapper__techs-wrapper__tech-wrapper {
   padding: 0px;
@@ -254,6 +262,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon {
   position: relative;
   padding: 0;
+  height: 60px;
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip {
   display: block;
