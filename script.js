@@ -31,30 +31,28 @@ document.addEventListener("DOMContentLoaded", () => {
     
         setTimeout(function () {
             const techIcons = document.querySelectorAll('.tech-icon');
-        
-            // Ajoutez une classe "colored" à toutes les icônes en même temps
             techIcons.forEach(icon => {
                 icon.querySelector('i').classList.add('colored');
             });
         
             setTimeout(function () {
-                // Ajoutez une classe "hover" à tous les tooltips après un délai
                 techIcons.forEach(icon => {
                     icon.classList.add('hover');
                 });
         
                 setTimeout(function () {
-                    // Enlevez les tooltips après un certain délai (par exemple, 3 secondes)
                     techIcons.forEach(icon => {
                         icon.classList.remove('hover');
                     });
-                }, 3500); // Délai pour enlever les tooltips (1500 ms)
-            }, 1500); // Délai pour afficher les tooltips (1500 ms)
-        }, 1000); // Délai initial pour commencer l'animation (1000 ms)
+
+                }, 3500); // stop display tooltip (1500 ms)
+            }, 1500); // display tooltip (1500 ms)
+        }, 1000); // start animation (1000 ms)
     ;
 
     function loadTranslation(language) {
-        fetch(`/traductions/${language}.json`)
+        console.log(window.location);
+        fetch(`./traductions/${language}.json`)
             .then(response => response.json()
             .then(data => {
                 //DESCRIPTION
