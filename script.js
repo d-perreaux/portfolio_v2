@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ;
 
     function loadTranslation(language) {
-        fetch(`https://github.com/d-perreaux/portfolio_v2/blob/main/traductions/${language}.json`)
+        fetch(`/traductions/${language}.json`)
             .then(response => response.json()
             .then(data => {
                 //DESCRIPTION
