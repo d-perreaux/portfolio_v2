@@ -285,6 +285,20 @@ main #prez-menu #contact .contact-link:hover i {
 main #prez-menu #contact .contact-link:active i {
   font-size: 0.8em;
 }
+main #prez-menu #contact .mail-link {
+  position: relative;
+}
+main #prez-menu #contact .mail-link .mail {
+  position: absolute;
+  font-size: 0.5em;
+  left: 50px;
+  bottom: 16px;
+}
+@media screen and (max-width: 992px) {
+  main #prez-menu #contact .mail-link .mail {
+    display: none;
+  }
+}
 main #scrollable-content {
   margin: 0;
   display: flex;

@@ -321,6 +321,23 @@ main {
                 font-size: 0.8em;
             }
 
+            .mail-link {
+                position: relative;
+
+                .mail {
+                    position: absolute;
+                    font-size: 0.5em;
+                    left: 50px ;
+                    bottom: 16px;
+
+                    @media screen and (max-width: $laptop-screen-width) {
+                        display: none;
+                    }
+                }
+            }
+
+            
+
         }
     }
 
