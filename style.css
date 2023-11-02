@@ -57,6 +57,11 @@ header {
   left: 0;
   opacity: 0.4;
 }
+@media screen and (max-width: 768px) {
+  header {
+    position: initial;
+  }
+}
 header #language-selector {
   display: flex;
   flex-direction: row;
@@ -163,6 +168,11 @@ main #prez-menu .description #name {
 @media screen and (max-width: 992px) {
   main #prez-menu .description #name {
     font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #prez-menu .description #name {
+    margin: 0;
   }
 }
 main #prez-menu .description p {
@@ -414,6 +424,11 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip
   border-radius: 19px;
   box-shadow: 14px 14px 28px #040608, -14px -14px 28px #0e181e;
 }
+@media screen and (max-width: 768px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
+    padding: 2px 4px;
+  }
+}
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .javaScript {
   background-color: #f0db4f;
 }
@@ -484,7 +499,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-
 }
 @media screen and (max-width: 768px) {
   main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
-    width: 10vw;
+    width: 15vw;
   }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs span {
@@ -730,6 +745,11 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
   z-index: 10;
   cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container {
+    top: -20px;
+  }
+}
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close {
   background-color: #fff;
   border-radius: 1.2em;
@@ -739,7 +759,7 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
 }
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:before {
   position: absolute;
-  left: 48%;
+  left: 52%;
   top: 52%;
   font-family: fontAwesome;
   content: "\f00d";
@@ -750,6 +770,12 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
 @media screen and (max-width: 992px) {
   main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:before {
     transform: translate(-51%, -50%);
+    left: 48%;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:before {
+    left: 50%;
   }
 }
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:hover:before {
