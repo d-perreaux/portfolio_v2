@@ -400,7 +400,7 @@ main {
                     font-size: 1em;
                 }
 
-                #first-techs-row {
+                #first-techs-row, #second-techs-row {
                     @media screen and (max-width: 1100px) {
                         margin-bottom: 40px;
                     }
@@ -486,7 +486,7 @@ main {
                                 -14px -14px 28px #0e181e;
 
                                 @media screen and (max-width: $mobile-screen-width) {
-                                    padding: 2px 4px;
+                                    padding: 2px 6px;
                                 }
                         }
 
@@ -535,6 +535,11 @@ main {
                 .tech-icon.hover .tooltip {
                     opacity: 1;
                     transition: opacity 1.5s ease-in;
+                }
+
+                #tech-icons-container:hover .tooltip {
+                    opacity: 1;
+                    transition: opacity .5s ease-in, font-size .2s ease-in-out;
                 }
 
                 .landing-techs__row-wrapper__techs-wrapper:hover .tooltip {
@@ -1043,3 +1048,5 @@ main {
     }
 
 }
+
+

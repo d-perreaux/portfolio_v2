@@ -274,6 +274,74 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".project-card").forEach(a => {
         a.addEventListener("click", openAsideProject);
     })
+
+    // Sélectionnez les éléments des trois rangées
+const firstTechsRow = document.getElementById('first-techs-row');
+const secondTechsRow = document.getElementById('second-techs-row');
+const thirdTechsRow = document.getElementById('third-techs-row');
+
+// Fonction pour activer l'effet au survol
+function activateEffect() {
+    firstTechsRow.classList.add('hover');
+    secondTechsRow.classList.add('hover');
+    thirdTechsRow.classList.add('hover');
+}
+
+// Fonction pour désactiver l'effet à la sortie du survol
+function deactivateEffect() {
+    firstTechsRow.classList.remove('hover');
+    secondTechsRow.classList.remove('hover');
+    thirdTechsRow.classList.remove('hover');
+}
+
+// Écoutez les événements de survol sur les trois rangées
+firstTechsRow.addEventListener('mouseenter', () => {
+    activateEffect();
+    showTooltips(); // Appeler une fonction pour afficher les tooltips
+});
+
+secondTechsRow.addEventListener('mouseenter', () => {
+    activateEffect();
+    showTooltips(); // Appeler une fonction pour afficher les tooltips
+});
+
+thirdTechsRow.addEventListener('mouseenter', () => {
+    activateEffect();
+    showTooltips(); // Appeler une fonction pour afficher les tooltips
+});
+
+// Écoutez les événements de sortie du survol sur les trois rangées
+firstTechsRow.addEventListener('mouseleave', () => {
+    deactivateEffect();
+    hideTooltips(); // Appeler une fonction pour masquer les tooltips
+});
+
+secondTechsRow.addEventListener('mouseleave', () => {
+    deactivateEffect();
+    hideTooltips(); // Appeler une fonction pour masquer les tooltips
+});
+
+thirdTechsRow.addEventListener('mouseleave', () => {
+    deactivateEffect();
+    hideTooltips(); // Appeler une fonction pour masquer les tooltips
+});
+
+// Fonction pour afficher les tooltips
+function showTooltips() {
+    const techIcons = document.querySelectorAll('.tech-icon');
+    techIcons.forEach(icon => {
+        icon.querySelector('.tooltip').style.opacity = '1';
+    });
+}
+
+// Fonction pour masquer les tooltips
+function hideTooltips() {
+    const techIcons = document.querySelectorAll('.tech-icon');
+    techIcons.forEach(icon => {
+        icon.querySelector('.tooltip').style.opacity = '0';
+    });
+}
+
 })
 
 

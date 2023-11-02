@@ -359,12 +359,12 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-row-title {
   font-size: 1em;
 }
 @media screen and (max-width: 1100px) {
-  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row {
+  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row, main #scrollable-content #skills .landing-techs__row-wrapper #second-techs-row {
     margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 768px) {
-  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row {
+  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row, main #scrollable-content #skills .landing-techs__row-wrapper #second-techs-row {
     margin-bottom: 0px;
   }
 }
@@ -440,7 +440,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip
 }
 @media screen and (max-width: 768px) {
   main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
-    padding: 2px 4px;
+    padding: 2px 6px;
   }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .javaScript {
@@ -476,6 +476,10 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon.hover .tooltip {
   opacity: 1;
   transition: opacity 1.5s ease-in;
+}
+main #scrollable-content #skills .landing-techs__row-wrapper #tech-icons-container:hover .tooltip {
+  opacity: 1;
+  transition: opacity 0.5s ease-in, font-size 0.2s ease-in-out;
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper:hover .tooltip {
   opacity: 1;
