@@ -961,7 +961,9 @@ main footer a {
   pointer-events: none;
   display: block;
   text-align: center;
-  font-size: 0.6em;
+}
+#back-no-deployed span {
+  font-size: 0.8em;
 }
 
 /*# sourceMappingURL=style.css.map */

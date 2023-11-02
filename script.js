@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             for (let k = 0; k < projectsLinksList.length; k++) {
                                 if (i === 1 && k === 1) { // Check if it's the second project and the second link
-                                    projectAsideLinkElements[k].textContent = isFrench ? "Back non déployé" : "Back not deployed"; // check if it's fr 
+                                    projectAsideLinkElements[k].innerHTML = isFrench ? "<span>Back non déployé</span>" : "<span>Back not deployed</span>"; // check if it's fr 
                                 } else {
                                     projectAsideLinkElements[k].textContent = projectsLinksList[k];
                                 }

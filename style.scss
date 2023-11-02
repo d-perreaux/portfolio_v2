@@ -1055,7 +1055,11 @@ main {
     pointer-events: none;
     display: block;
     text-align: center;
-    font-size: 0.6em;
+
+    span {
+        font-size: 0.8em;
+    }
+    
 }
 
 
