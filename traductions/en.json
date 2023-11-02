@@ -2,7 +2,8 @@
     "description": {
         "name": "Dimitri Perreaux",
         "job": "Web Developer",
-        "school": "Studying <strong>Bachelor IT</strong> at <strong>EPSI Lille,</strong>",
+        "school": "Studying <strong>Bachelor IT</strong> at <strong>EPSI Lille</strong> :",
+        "school2": "Application Designer and Developer",
         "availability": "Looking for a <strong>Cooperative training course</strong>."
     },
     "globalMenu": [
@@ -15,6 +16,8 @@
         "Projects",
         "About"
     ],
+    "ctaCV": "Get my CV"
+    ,
     "softSkills": [
         "Teamplayer",
         "Client oriented",
@@ -27,14 +30,24 @@
             "techUsed": [
                 "React",
                 "Sass"
+            ], 
+            "projectDescription":[
+                "<em>Openclassrooms Project</em>", 
+                "I developed the entire application and its components with React, following the provided Figma mockups.",
+                "A requirements document with functional and technical specifications was provided."
             ]
         },
         {
             "title": "Mon Vieux Grimoire",
-            "description": "Library website for book referencing and rating",
+            "description": "Library web application for book referencing and rating",
             "techUsed": [
                 "Node.js",
                 "MongoDB"
+            ], 
+            "projectDescription":[
+                "<em>Openclassrooms Project</em>", 
+                "I designed the back-end part by creating an Express server, configuring the database, and developing the API.",
+                "I implemented features such as secure authentication, user file management using middlewares, and evaluation management."
             ]
         },
         {
@@ -43,8 +56,17 @@
             "techUsed": [
                 "JavaScript",
                 "SEO"
+            ], 
+            "projectDescription":[
+                "<em>Openclassrooms Project</em>", 
+                "I conducted a performance assessment using Lighthouse and GTMetrix, identifying areas for optimization, such as reducing image size and loading times, and code minification.",
+                "I also implemented local SEO (schema.org), improved the semantic content and debugged the gallery."
             ]
         }
+    ],
+    "asideProjectLinks":[
+        "GitHub Repo", 
+        "Visit the Website"
     ],
     "about": [
         "I am passionate about the world of development, drawn to a dynamic and forward-looking environment.",

@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6389e1f0c0.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script src="./script.js"></script>
@@ -30,7 +31,8 @@
                 <div class='description'>
                     <p id="name" class="animate-text"></p>
                     <h1 id="job" class="animate-text"></h1>
-                    <p id="school" class="animate-text">></p>
+                    <p id="school" class="animate-text"></p>
+                    <p id="school2" class="animate-text"></p>
                     <p id="availability" class="animate-text"></p>
                 </div>
                 <nav id="global-menu">
@@ -57,13 +59,18 @@
                 </nav>
                 <div class="cta-cv">
                     <div class="button-cv">
-                        <a href="./assets/dimitri_perreaux_cv_alternance_dev.pdf"
-                            download="./assets/dimitri_perreaux_cv_alternance_dev.pdf">Get my CV</a>
+                        <a class="cta-cv-link" href="./assets/dimitri_perreaux_cv_alternance_dev.pdf"
+                            download="./assets/dimitri_perreaux_cv_alternance_dev.pdf">
+                        </a>
                     </div>
                 </div>
                 <div id="contact">
-                    <i class="devicon-github-original"></i>
-                    <i class="devicon-linkedin-plain"></i>
+                    <a href="https://github.com/d-perreaux" target="_blank" class="contact-link">
+                        <i class="devicon-github-original"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dimitri-perreaux-73041825b/" target="_blank" class="contact-link">
+                        <i class="devicon-linkedin-plain"></i>
+                    </a>
                 </div>
             </aside>
             <div id="scrollable-content">
@@ -85,7 +92,6 @@
                         </ul>
                     </div>
                     <div class="landing-techs__row-wrapper">
-                        <!-- <h3 class="tech-row-title">Skills</h3> -->
                         <ul class="landing-techs__row-wrapper__techs-wrapper wrap">
                             <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon tech-row-1">
                                 <i class="devicon-javascript-plain" data-tooltip="JavaScript"></i>
@@ -132,7 +138,6 @@
                         </ul>
                     </div>
                     <div class="landing-techs__row-wrapper">
-                        <!-- <h3 class="tech-row-title">Tools</h3> -->
                         <ul class="landing-techs__row-wrapper__techs-wrapper">
                             <li class="landing-techs__row-wrapper__techs-wrapper__tech-wrapper tech-icon">
                                 <i class="devicon-git-plain" data-tooltip="Git"></i>
@@ -157,51 +162,46 @@
                 </section>
                 <section id="projects">
                     <h2>Projets</h2>
-                    <a href="#modal-project1" class="js-modal">
-                        <div class="project-card">
 
-                            <div class="project-card-description">
-                                <div class="project-card-description-title">
+                    <div class="project-card">
+
+                        <div class="project-card-description">
+                            <div class="project-card-description-title">
+                            </div>
+                            <div class="project-card-description-summary">
+                            </div>
+                            <div class="project-card-description-techs-wrapper">
+                                <span class="tech-project">React</span>
+                                <span class="tech-project">Sass</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-img-wrapper">
+                            <img src="./assets/kasa_home-1.webp">
+                        </div>
+
+                        <aside id="aside-project1" class="aside-project">
+
+                            <div class="modal-wrapper">
+                                <div class="aside-project-text">
                                 </div>
-                                <div class="project-card-description-summary">
-                                </div>
-                                <div class="project-card-description-techs-wrapper">
-                                    <span class="tech-project">React</span>
-                                    <span class="tech-project">Sass</span>
+                                <div class="aside-project-links">
+                                    <div class="js-aside-project-close-container">
+                                        <div class="aside-container js-aside-project-close">
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/d-perreaux/OCR_P6_kasa" target="_blank"
+                                        class="project-link"></a>
+                                    <a href="https://d-perreaux.github.io/OCR_P6_kasa" target="_blank" class="project-link"></a>
                                 </div>
                             </div>
-
-                            <div class="project-card-img-wrapper">
-                                <img src="./assets/kasa_home-1.webp">
-                            </div>
-
-                        </div>
-                    </a>
-                    <aside id="modal-project1" class="modal" style="display: none;">
-                        <button class="js-modal-close">Fermer la boite modale</button>
-                        <div class="modal-wrapper">
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                            <p>blabla</p>
-                        </div>
-                    </aside>
+                        </aside>
+                    </div>
                     <div class="project-card">
                         <div class="project-card-description">
                             <div class="project-card-description-title">
                             </div>
                             <div class="project-card-description-summary">
-
                             </div>
                             <div class="project-card-description-techs-wrapper">
                                 <span class="tech-project">Node.js</span>
@@ -211,6 +211,21 @@
                         <div class="project-card-img-wrapper">
                             <img src="./assets/grimoire_home.png">
                         </div>
+                        <aside id="aside-project1" class="aside-project">
+                            <div class="modal-wrapper">
+                                <div class="aside-project-text">
+                                </div>
+                                <div class="aside-project-links">
+                                    <div class="js-aside-project-close-container">
+                                        <div class="aside-container js-aside-project-close">
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/d-perreaux/OCR_P7_mon_vieux_grimoire" target="_blank"
+                                        class="project-link"></a>
+                                    <a href="" class="project-link"></a>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                     <div class="project-card">
                         <div class="project-card-description">
@@ -226,6 +241,22 @@
                         <div class="project-card-img-wrapper">
                             <img src="./assets/nina carducci.png">
                         </div>
+                        <aside id="aside-project1" class="aside-project">
+                            <div class="modal-wrapper">
+                                <div class="aside-project-text">
+                                </div>
+                                <div class="aside-project-links">
+                                    <div class="js-aside-project-close-container">
+                                        <div class="aside-container js-aside-project-close">
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/d-perreaux/OCR_P5_nina-carducci.github.io"
+                                        target="_blank" class="project-link"></a>
+                                    <a href="https://d-perreaux.github.io/OCR_P5_nina-carducci.github.io/"
+                                        target="_blank" class="project-link"></a>
+                                </div>
+                            </div>
+                        </aside>
                     </div>
                 </section>
                 <section id="about">

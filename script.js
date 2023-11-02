@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // setTimeout(function () {
     //     const techIcons = document.querySelectorAll('.tech-icon');
     //     let currentIndex = 0;
-    
+
     //     function hideAllTooltips() {
     //         techIcons.forEach(icon => {
     //             icon.classList.remove('hover');
     //         });
     //     }
-    
+
     //     function showNextTooltip() {
     //         hideAllTooltips();
     //         if (currentIndex < techIcons.length) {
@@ -19,98 +19,137 @@ document.addEventListener("DOMContentLoaded", () => {
     //             setTimeout(showNextTooltip, 400);
     //         }
     //     }
-    
+
     //     // Cacher tous les tooltips sauf le premier
     //     hideAllTooltips();
     //     techIcons[0].classList.add('hover');
-    
+
     //     // Démarrer le tour automatique
     //     showNextTooltip();
     // }, 1000);
 
-    
+
+    setTimeout(function () {
+        const techIcons = document.querySelectorAll('.tech-icon');
+        techIcons.forEach(icon => {
+            icon.querySelector('i').classList.add('colored');
+        });
+
         setTimeout(function () {
-            const techIcons = document.querySelectorAll('.tech-icon');
             techIcons.forEach(icon => {
-                icon.querySelector('i').classList.add('colored');
+                icon.classList.add('hover');
             });
-        
+
             setTimeout(function () {
                 techIcons.forEach(icon => {
-                    icon.classList.add('hover');
+                    icon.classList.remove('hover');
                 });
-        
-                setTimeout(function () {
-                    techIcons.forEach(icon => {
-                        icon.classList.remove('hover');
-                    });
 
-                }, 3500); // stop display tooltip (1500 ms)
-            }, 1500); // display tooltip (1500 ms)
-        }, 1000); // start animation (1000 ms)
+            }, 3500); // stop display tooltip (1500 ms)
+        }, 1500); // display tooltip (1500 ms)
+    }, 1000); // start animation (1000 ms)
     ;
 
     function loadTranslation(language) {
         fetch(`./traductions/${language}.json`)
             .then(response => response.json()
-            .then(data => {
-                //DESCRIPTION
-                document.getElementById('name').textContent = data.description.name;
-                document.getElementById('job').textContent = data.description.job;
-                document.getElementById('school').innerHTML = data.description.school;
-                document.getElementById('availability').innerHTML = data.description.availability;
+                .then(data => {
+                    //DESCRIPTION
+                    document.getElementById('name').textContent = data.description.name;
+                    document.getElementById('job').textContent = data.description.job;
+                    document.getElementById('school').innerHTML = data.description.school;
+                    document.getElementById('school2').innerHTML = data.description.school2;
+                    document.getElementById('availability').innerHTML = data.description.availability;
 
-                //MENU
-                const menuFiltersList = data.globalMenu;
-                const menuFilters = document.getElementsByClassName('menu-filter');
-                for (let i = 0; i < menuFilters.length; i++) {
-                    menuFilters[i].textContent = menuFiltersList[i];
-                }
-
-                //SOFT SKILLS
-                const softSkillsElements = document.getElementsByClassName('soft-skill');
-                const softSkillsList = data.softSkills;
-                for (let i = 0; i < softSkillsElements.length; i++) {
-                    softSkillsElements[i].textContent = softSkillsList[i];
-                }
-
-                //TITLE SECTIONS
-                const sectionTitlesElements = document.getElementsByTagName('h2');
-                const sectionTitlesList = data.titleSections;
-                for (let i = 0; i < sectionTitlesList.length; i++) {
-                    sectionTitlesElements[i].textContent = sectionTitlesList[i];
-                }
-
-                //PROJECTS
-                const projectsList = data.projects;
-                const projectsElements = document.getElementsByClassName("project-card");
-                for (let i = 0; i < projectsList.length; i++) {
-                    if (projectsList[i]) {
-                        const projectCardDescription = projectsElements[i].querySelector(".project-card-description");
-                        const projectCardTitle = projectCardDescription.querySelector(".project-card-description-title");
-                        projectCardTitle.textContent = projectsList[i].title;
-
-                        const projectCardSummary = projectCardDescription.querySelector(".project-card-description-summary");
-                        projectCardSummary.textContent = projectsList[i].description;
+                    //MENU
+                    const menuFiltersList = data.globalMenu;
+                    const menuFilters = document.getElementsByClassName('menu-filter');
+                    for (let i = 0; i < menuFilters.length; i++) {
+                        menuFilters[i].textContent = menuFiltersList[i];
                     }
-                }
 
-                //ABOUT
-                const aboutParagraphes = data.about;
-                aboutInner = "";
-                aboutParagraphes.forEach( paragraphe => {
-                    aboutInner += `<p>${paragraphe}</p>`;
-                })
-                document.getElementById('about-text').innerHTML = aboutInner;
+                    //CTA CV
+                    const ctaCvElements = document.querySelectorAll('.cta-cv-link');
 
-                //FOOTER
-                const footerParagraphesList = data.footer;
-                const footerParagraphesElements = document.querySelectorAll("footer p");
-                for (let i = 0; i < footerParagraphesList.length; i++) {
-                    footerParagraphesElements[i].textContent = data.footer[i];
-                }
+                    ctaCvElements.forEach(element => {
+                        element.textContent = data.ctaCV;
+                    });
 
-            }))
+
+
+
+                    //SOFT SKILLS
+                    const softSkillsElements = document.getElementsByClassName('soft-skill');
+                    const softSkillsList = data.softSkills;
+                    for (let i = 0; i < softSkillsElements.length; i++) {
+                        softSkillsElements[i].textContent = softSkillsList[i];
+                    }
+
+                    //TITLE SECTIONS
+                    const sectionTitlesElements = document.getElementsByTagName('h2');
+                    const sectionTitlesList = data.titleSections;
+                    for (let i = 0; i < sectionTitlesList.length; i++) {
+                        sectionTitlesElements[i].textContent = sectionTitlesList[i];
+                    }
+
+                    //PROJECTS
+                    const projectsList = data.projects;
+                    const projectsElements = document.getElementsByClassName("project-card");
+
+                    //PROJECTS aside text
+                    const projectsAsideTextElements = document.getElementsByClassName("aside-project-text");
+
+                    //PROJECTS aside links
+                    const projectsLinksList = data.asideProjectLinks;
+
+
+                    for (let i = 0; i < projectsList.length; i++) {
+
+                        let asideProjectText = ""
+                        if (projectsList[i]) {
+                            const projectCardDescription = projectsElements[i].querySelector(".project-card-description");
+                            const projectCardTitle = projectCardDescription.querySelector(".project-card-description-title");
+                            projectCardTitle.textContent = projectsList[i].title;
+                            const projectsAsideTextList = projectsList[i].projectDescription;
+
+                            for (let j = 0; j < projectsAsideTextList.length; j++) {
+                                asideProjectText += `<p>${projectsAsideTextList[j]}</p>`;
+                            }
+
+                            projectsAsideTextElements[i].innerHTML = asideProjectText;
+
+                            const projectCardSummary = projectCardDescription.querySelector(".project-card-description-summary");
+                            projectCardSummary.textContent = projectsList[i].description;
+
+                            const projectAsideLinkElements = projectsElements[i].querySelectorAll(".project-link");
+
+
+                            for (let k = 0; k < projectsLinksList.length; k++) {
+                                projectAsideLinkElements[k].textContent = projectsLinksList[k]
+                            }
+                        }
+                    }
+
+
+
+
+
+                    //ABOUT
+                    const aboutParagraphes = data.about;
+                    aboutInner = "";
+                    aboutParagraphes.forEach(paragraphe => {
+                        aboutInner += `<p>${paragraphe}</p>`;
+                    })
+                    document.getElementById('about-text').innerHTML = aboutInner;
+
+                    //FOOTER
+                    const footerParagraphesList = data.footer;
+                    const footerParagraphesElements = document.querySelectorAll("footer p");
+                    for (let i = 0; i < footerParagraphesList.length; i++) {
+                        footerParagraphesElements[i].textContent = data.footer[i];
+                    }
+
+                }))
     }
 
     loadTranslation("fr");
@@ -128,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     menuFilters = document.getElementsByClassName('menu-selector');
-    
-    function removeMenuSelected(){
+
+    function removeMenuSelected() {
         for (const menuFilter of menuFilters) {
             if (menuFilter.classList.contains('menu-selected')) {
                 menuFilter.classList.remove('menu-selected');
@@ -148,10 +187,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function handleProjectScroll() {
         const projectCards = document.querySelectorAll(".project-card");
-        
+
         projectCards.forEach(card => {
             const rect = card.getBoundingClientRect();
-             // top = distance du bord sup de l'objet par rapport au viewport
+            // top = distance du bord sup de l'objet par rapport au viewport
             // bottom = distance du bord inf de l'objet par rapport au viewport
             // The read-only innerHeight property of the Window interface returns
             // the interior height of the window in pixels, including the height of 
@@ -182,11 +221,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleMenuScroll() {
         const sections = document.getElementsByTagName("section");
         const sectionArray = Array.from(sections);
-    
+
         sectionArray.forEach(section => {
             const rect = section.getBoundingClientRect();
             const isSelected = (rect.top < window.innerHeight * 0.1 && rect.bottom > window.innerHeight * 0.1);
-    
+
             if (isSelected) {
                 const menuLink = document.querySelector(`a[href="#${section.id}"]`);
                 if (menuLink) {
@@ -204,48 +243,43 @@ document.addEventListener("DOMContentLoaded", () => {
     // gestionnaire d'événement de défilement
     window.addEventListener("scroll", handleProjectScroll);
     window.addEventListener("scroll", handleMenuScroll);
-    
+
     // appeler handleScroll au chargement de la page pour vérifier si les éléments initialement visibles doivent également être animés
     handleProjectScroll();
     handleMenuScroll();
 
-    let modal = null;
-
-    const openModal = function (e) {
-        e.preventDefault();
+    const openAsideProject = function (e) {
+        
         let target = e.target;
+        const projectCard = target.closest('.project-card');
+        const asideProject = projectCard.querySelector('.aside-project');
+        const closeButton = projectCard.querySelector('.js-aside-project-close-container');
+        asideProject.classList.add('open');
+        closeButton.addEventListener('click', closeAsideProject);
 
-        while (target && target.tagName !== 'A') {
-            target = target.parentElement;
+        if (target.classList.contains('project-link')) {
+            return; // Allow the default click behave for the link
         }
+        e.preventDefault();
 
-        const modalFocus = document.querySelector(`${target.getAttribute('href')}`);      
-        modalFocus.style.display = null
-
-        modal = modalFocus;
-
-        // modal.addEventListener("click", closeModal);
-        modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
     }
 
-    const closeModal = function (e) {
-        if (modal === null) return
-        e.preventDefault;
-        modal.style.display = "none";
-        // modal.removeEventListener("click", closeModal);
-        modal.querySelector('.js-modal-close').removeListener('click', closeModal);
-        modal = null
+    const closeAsideProject = function (e) {
+        e.stopPropagation();
+        const asideProject = e.target.closest('.aside-project');
+        asideProject.classList.remove('open');
+        console.log(asideProject)
     }
 
-    document.querySelectorAll(".js-modal").forEach(a => {
-        a.addEventListener("click", openModal);
+    document.querySelectorAll(".project-card").forEach(a => {
+        a.addEventListener("click", openAsideProject);
     })
 })
 
 
 
-  
-  
+
+
 
 
 
