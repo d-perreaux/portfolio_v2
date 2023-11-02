@@ -393,7 +393,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row
 }
 @media screen and (max-width: 400px) {
   main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
-    font-size: 9vw;
+    font-size: 11vw;
   }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon i {
