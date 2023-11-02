@@ -425,7 +425,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip
   display: flex;
   justify-content: center;
   font-size: 0.75em;
-  transition: opacity 1.5s ease-out;
+  transition: opacity 5s ease-out;
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
   font-size: 0.2em;
@@ -870,6 +870,7 @@ main #about .wrapper-about .wraper-about-photo img {
 @media screen and (max-width: 768px) {
   main #about .wrapper-about .wraper-about-photo img {
     width: 20vw;
+    margin-bottom: 20px;
   }
 }
 main #about .about-visible {
@@ -953,6 +954,14 @@ main footer p {
 }
 main footer a {
   font-weight: 700;
+}
+
+#back-no-deployed {
+  cursor: not-allowed;
+  pointer-events: none;
+  display: block;
+  text-align: center;
+  font-size: 0.6em;
 }
 
 /*# sourceMappingURL=style.css.map */

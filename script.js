@@ -54,6 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`./traductions/${language}.json`)
             .then(response => response.json()
                 .then(data => {
+
+                    const isFrench = language === "fr";
+
                     //DESCRIPTION
                     document.getElementById('name').textContent = data.description.name;
                     document.getElementById('job').textContent = data.description.job;
@@ -123,9 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             const projectAsideLinkElements = projectsElements[i].querySelectorAll(".project-link");
 
-
                             for (let k = 0; k < projectsLinksList.length; k++) {
-                                projectAsideLinkElements[k].textContent = projectsLinksList[k]
+                                if (i === 1 && k === 1) { // Check if it's the second project and the second link
+                                    projectAsideLinkElements[k].textContent = isFrench ? "Back non déployé" : "Back not deployed"; // check if it's fr 
+                                } else {
+                                    projectAsideLinkElements[k].textContent = projectsLinksList[k];
+                                }
                             }
                         }
                     }
@@ -249,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleMenuScroll();
 
     const openAsideProject = function (e) {
-        
+
         let target = e.target;
         const projectCard = target.closest('.project-card');
         const asideProject = projectCard.querySelector('.aside-project');
@@ -276,71 +282,71 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Sélectionnez les éléments des trois rangées
-const firstTechsRow = document.getElementById('first-techs-row');
-const secondTechsRow = document.getElementById('second-techs-row');
-const thirdTechsRow = document.getElementById('third-techs-row');
+    const firstTechsRow = document.getElementById('first-techs-row');
+    const secondTechsRow = document.getElementById('second-techs-row');
+    const thirdTechsRow = document.getElementById('third-techs-row');
 
-// Fonction pour activer l'effet au survol
-function activateEffect() {
-    firstTechsRow.classList.add('hover');
-    secondTechsRow.classList.add('hover');
-    thirdTechsRow.classList.add('hover');
-}
+    // Fonction pour activer l'effet au survol
+    function activateEffect() {
+        firstTechsRow.classList.add('hover');
+        secondTechsRow.classList.add('hover');
+        thirdTechsRow.classList.add('hover');
+    }
 
-// Fonction pour désactiver l'effet à la sortie du survol
-function deactivateEffect() {
-    firstTechsRow.classList.remove('hover');
-    secondTechsRow.classList.remove('hover');
-    thirdTechsRow.classList.remove('hover');
-}
+    // Fonction pour désactiver l'effet à la sortie du survol
+    function deactivateEffect() {
+        firstTechsRow.classList.remove('hover');
+        secondTechsRow.classList.remove('hover');
+        thirdTechsRow.classList.remove('hover');
+    }
 
-// Écoutez les événements de survol sur les trois rangées
-firstTechsRow.addEventListener('mouseenter', () => {
-    activateEffect();
-    showTooltips(); // Appeler une fonction pour afficher les tooltips
-});
-
-secondTechsRow.addEventListener('mouseenter', () => {
-    activateEffect();
-    showTooltips(); // Appeler une fonction pour afficher les tooltips
-});
-
-thirdTechsRow.addEventListener('mouseenter', () => {
-    activateEffect();
-    showTooltips(); // Appeler une fonction pour afficher les tooltips
-});
-
-// Écoutez les événements de sortie du survol sur les trois rangées
-firstTechsRow.addEventListener('mouseleave', () => {
-    deactivateEffect();
-    hideTooltips(); // Appeler une fonction pour masquer les tooltips
-});
-
-secondTechsRow.addEventListener('mouseleave', () => {
-    deactivateEffect();
-    hideTooltips(); // Appeler une fonction pour masquer les tooltips
-});
-
-thirdTechsRow.addEventListener('mouseleave', () => {
-    deactivateEffect();
-    hideTooltips(); // Appeler une fonction pour masquer les tooltips
-});
-
-// Fonction pour afficher les tooltips
-function showTooltips() {
-    const techIcons = document.querySelectorAll('.tech-icon');
-    techIcons.forEach(icon => {
-        icon.querySelector('.tooltip').style.opacity = '1';
+    // Écoutez les événements de survol sur les trois rangées
+    firstTechsRow.addEventListener('mouseenter', () => {
+        activateEffect();
+        showTooltips(); // Appeler une fonction pour afficher les tooltips
     });
-}
 
-// Fonction pour masquer les tooltips
-function hideTooltips() {
-    const techIcons = document.querySelectorAll('.tech-icon');
-    techIcons.forEach(icon => {
-        icon.querySelector('.tooltip').style.opacity = '0';
+    secondTechsRow.addEventListener('mouseenter', () => {
+        activateEffect();
+        showTooltips(); // Appeler une fonction pour afficher les tooltips
     });
-}
+
+    thirdTechsRow.addEventListener('mouseenter', () => {
+        activateEffect();
+        showTooltips(); // Appeler une fonction pour afficher les tooltips
+    });
+
+    // Écoutez les événements de sortie du survol sur les trois rangées
+    firstTechsRow.addEventListener('mouseleave', () => {
+        deactivateEffect();
+        hideTooltips(); // Appeler une fonction pour masquer les tooltips
+    });
+
+    secondTechsRow.addEventListener('mouseleave', () => {
+        deactivateEffect();
+        hideTooltips(); // Appeler une fonction pour masquer les tooltips
+    });
+
+    thirdTechsRow.addEventListener('mouseleave', () => {
+        deactivateEffect();
+        hideTooltips(); // Appeler une fonction pour masquer les tooltips
+    });
+
+    // Fonction pour afficher les tooltips
+    function showTooltips() {
+        const techIcons = document.querySelectorAll('.tech-icon');
+        techIcons.forEach(icon => {
+            icon.querySelector('.tooltip').style.opacity = '1';
+        });
+    }
+
+    // Fonction pour masquer les tooltips
+    function hideTooltips() {
+        const techIcons = document.querySelectorAll('.tech-icon');
+        techIcons.forEach(icon => {
+            icon.querySelector('.tooltip').style.opacity = '0';
+        });
+    }
 
 })
 
