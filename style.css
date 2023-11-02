@@ -440,7 +440,7 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip
 }
 @media screen and (max-width: 768px) {
   main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .tooltip-message {
-    padding: 2px 6px;
+    padding: 2px 8px;
   }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-icon .tooltip .javaScript {
