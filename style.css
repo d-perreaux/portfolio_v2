@@ -17,7 +17,17 @@ body {
   height: 100vh;
   width: 100hvw;
   box-sizing: border-box;
-  max-width: 1400px;
+  max-width: 1500px;
+}
+@media screen and (max-width: 992px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
 }
 
 h1 {
@@ -107,6 +117,12 @@ header:hover {
   justify-content: space-around;
   margin: 0 96px;
 }
+@media screen and (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    margin: 8px;
+  }
+}
 
 main #prez-menu {
   margin: 0;
@@ -120,6 +136,20 @@ main #prez-menu {
   height: 100vh;
   background-color: #090f13;
 }
+@media screen and (max-width: 1286px) {
+  main #prez-menu {
+    font-size: 16px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #prez-menu {
+    position: initial;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
 main #prez-menu .description {
   display: flex;
   flex-direction: column;
@@ -129,6 +159,11 @@ main #prez-menu .description #name {
   font-size: 3.2em;
   color: #e2e8f0;
   margin: 40px 0 0 0;
+}
+@media screen and (max-width: 992px) {
+  main #prez-menu .description #name {
+    font-size: 2.5em;
+  }
 }
 main #prez-menu .description p {
   margin: 6px;
@@ -142,6 +177,13 @@ main #prez-menu #global-menu {
   flex-direction: column;
   font-size: 0.8em;
   margin: 16px;
+}
+@media screen and (max-width: 768px) {
+  main #prez-menu #global-menu {
+    margin: 16px 0;
+    width: 100%;
+    align-items: center;
+  }
 }
 main #prez-menu #global-menu ul {
   list-style: none;
@@ -181,6 +223,12 @@ main #prez-menu .cta-cv {
   display: flex;
   margin-left: 16px;
   padding-left: 40px;
+}
+@media screen and (max-width: 768px) {
+  main #prez-menu .cta-cv {
+    margin-left: 0px;
+    padding-left: 0px;
+  }
 }
 main #prez-menu .cta-cv .button-cv {
   background: linear-gradient(to right, #aa7c1f, #e1a624);
@@ -242,6 +290,11 @@ main #scrollable-content {
   overflow-x: hidden;
   padding: 0 2px 0 0;
 }
+@media screen and (max-width: 768px) {
+  main #scrollable-content {
+    width: 100%;
+  }
+}
 main #scrollable-content #skills {
   display: flex;
   flex-direction: column;
@@ -251,12 +304,28 @@ main #scrollable-content #skills {
   height: 83vh;
   padding-top: 10px;
 }
+@media screen and (max-width: 768px) {
+  main #scrollable-content #skills {
+    height: auto;
+  }
+}
 main #scrollable-content #skills .landing-techs__row-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+}
+@media screen and (max-width: 1100px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .tech-row-title {
   min-width: 65px;
@@ -265,14 +334,43 @@ main #scrollable-content #skills .landing-techs__row-wrapper .tech-row-title {
   margin-bottom: 24px;
   font-size: 1em;
 }
+@media screen and (max-width: 1100px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper #first-techs-row {
+    margin-bottom: 0px;
+  }
+}
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   padding: 0;
   margin: 0;
-  font-size: 2.9em;
+  font-size: 3.3vw;
+}
+@media screen and (max-width: 1100px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
+    font-size: 6vw;
+  }
+}
+@media screen and (max-width: 570px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
+    font-size: 7vw;
+  }
+}
+@media screen and (max-width: 490px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
+    font-size: 8vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper {
+    font-size: 9vw;
+  }
 }
 main #scrollable-content #skills .landing-techs__row-wrapper .landing-techs__row-wrapper__techs-wrapper .tech-icon i {
   transition: color 1.5s ease-in-out, font-size 0.2s ease-out;
@@ -374,6 +472,21 @@ main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-
   border-radius: 12px;
   margin-bottom: 8px;
 }
+@media screen and (max-width: 1100px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
+    width: 9vw;
+  }
+}
+@media screen and (max-width: 820px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
+    width: 8vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs img {
+    width: 10vw;
+  }
+}
 main #scrollable-content #skills .landing-techs__row-wrapper .soft-skills .soft-skills-imgs span {
   color: #d1d1d1;
   font-size: 1.1em;
@@ -427,10 +540,20 @@ main #scrollable-content #projects .project-card .project-card-description .proj
   width: auto;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .project-card-description {
+    font-size: 1.5em;
+  }
+}
 main #scrollable-content #projects .project-card .project-card-description .project-card-description-summary {
   font-family: "Roboto";
   font-size: 0.7em;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .project-card-description .project-card-description-summary {
+    font-size: 1em;
+  }
 }
 main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper {
   align-self: center;
@@ -445,6 +568,28 @@ main #scrollable-content #projects .project-card .project-card-description .proj
   padding: 3px 12px;
   font-size: 0.7em;
   font-weight: 700;
+}
+@media screen and (max-width: 1100px) {
+  main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper .tech-project {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper .tech-project {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 421px) {
+  main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper .tech-project {
+    padding: 3px 10px;
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 350px) {
+  main #scrollable-content #projects .project-card .project-card-description .project-card-description-techs-wrapper .tech-project {
+    padding: 3px 8px;
+    font-size: 0.6em;
+  }
 }
 main #scrollable-content #projects .project-card .project-card-img-wrapper {
   transition: all 0.4s cubic-bezier(0.24, 0.25, 0.42, 1.01);
@@ -496,6 +641,41 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
   width: 70%;
   padding: 20px;
 }
+@media screen and (max-width: 1390px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 1200px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 992px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 930px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 776px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 580px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-text {
+    font-size: 0.9em;
+  }
+}
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links {
   width: 30%;
   color: yellow;
@@ -519,6 +699,19 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
   border-radius: 25px;
   font-size: 0.9em;
   transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 992px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .project-link {
+    width: 90px;
+    font-size: 0.8em;
+    height: 20px;
+    margin: 8px 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .project-link {
+    font-size: 1.2em;
+  }
 }
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .project-link:hover {
   background-color: #e1a624;
@@ -546,13 +739,18 @@ main #scrollable-content #projects .project-card .aside-project .modal-wrapper .
 }
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:before {
   position: absolute;
-  left: 52%;
+  left: 48%;
   top: 52%;
   font-family: fontAwesome;
   content: "\f00d";
   color: #000;
   font-size: 1em;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 992px) {
+  main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:before {
+    transform: translate(-51%, -50%);
+  }
 }
 main #scrollable-content #projects .project-card .aside-project .modal-wrapper .aside-project-links .js-aside-project-close-container .js-aside-project-close:hover:before {
   color: #ba3242;
@@ -575,6 +773,11 @@ main #about {
   height: 85vh;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  main #about {
+    height: auto;
+  }
+}
 main #about h2 {
   margin: 0;
   align-self: flex-start;
@@ -596,10 +799,21 @@ main #about .wrapper-about {
   opacity: 0.3;
   transition: opacity 0.7s ease-in-out;
 }
+@media screen and (max-width: 768px) {
+  main #about .wrapper-about {
+    flex-direction: column;
+    width: 100%;
+  }
+}
 main #about .wrapper-about .wraper-about-photo {
   margin-right: 16px;
   background-color: #090f13;
   z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  main #about .wrapper-about .wraper-about-photo {
+    margin: auto;
+  }
 }
 main #about .wrapper-about .wraper-about-photo img {
   width: 100%;
@@ -608,6 +822,11 @@ main #about .wrapper-about .wraper-about-photo img {
   outline: 4px solid #090f13;
   outline-offset: -2px;
   width: 15vw;
+}
+@media screen and (max-width: 768px) {
+  main #about .wrapper-about .wraper-about-photo img {
+    width: 20vw;
+  }
 }
 main #about .about-visible {
   opacity: 1;
@@ -623,6 +842,11 @@ main #about #about-text p {
   margin: 0 0 16px 0;
   padding: 0;
 }
+@media screen and (max-width: 768px) {
+  main #about #about-text p {
+    font-size: 1.2em;
+  }
+}
 main #about #about-text p:first-child {
   text-indent: 20px;
 }
@@ -633,6 +857,51 @@ main footer {
   align-items: center;
   justify-content: center;
   font-family: "Roboto";
+}
+@media screen and (max-width: 1245px) {
+  main footer {
+    font-size: 0.5em;
+  }
+}
+@media screen and (max-width: 992px) {
+  main footer {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 972px) {
+  main footer {
+    font-size: 0.6em;
+  }
+}
+@media screen and (max-width: 864px) {
+  main footer {
+    font-size: 0.5em;
+  }
+}
+@media screen and (max-width: 768px) {
+  main footer {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 673px) {
+  main footer {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 631px) {
+  main footer {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 590px) {
+  main footer {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 552px) {
+  main footer {
+    font-size: 0.8em;
+  }
 }
 main footer p {
   margin: 4px;
